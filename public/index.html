@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="rymav" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>RYMAV Engenharia</title>
@@ -8,6 +8,23 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+	<!-- script tags
+	============================================================= -->
+	<script src="js/core/jquery-2.1.1.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="js/core/gmaps.js"></script>
+	<script src="js/core/smoothscroll.js"></script>
+	<script src="js/core/bootstrap.min.js"></script>
+	<script src="js/core/custom.js"></script>
+	<script src="js/core/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('rymav', []);
+		angular.module('rymav').controller('TesteController', function ($scope) {
+			$scope.teste = function () {
+				console.log("Funcionou");
+			}
+		})
+	</script>
 </head>
 <body>
 	
@@ -21,7 +38,7 @@
 					<a href="index.html"><img src="img/logo.png" alt="" class="img-responsive logo"></a>
 				</div>
 
-				<div class="col-xs-9 col-md-9">
+				<div class="col-xs-9 col-md-9" >
 					<nav class="navbar navbar-default">
 					  <div class="container-fluid nav-bar">
 					    <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,7 +52,7 @@
 					    </div>
 
 					    <!-- Collect the nav links, forms, and other content for toggling -->
-					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="TesteController">
 					      
 					      <ul class="nav navbar-nav navbar-right">
 					        <li><a class="menu active" href="#home" >Início</a></li>
@@ -43,6 +60,7 @@
 					        <li><a class="menu" href="#service">Nossos Serviços </a></li>
 					        <li><a class="menu" href="#contact">Entre em Contato</a></li>
 					        <li><a class="menu" href="#" data-toggle="modal" data-target="#LoginModal">Login</a></li>
+					        <li><button ng-click="teste()">clicar</button></li>
 					      </ul>
 					    </div><!-- /navbar-collapse -->
 					  </div><!-- / .container-fluid -->
@@ -223,8 +241,8 @@
 									<h3>Mande um E-MAIL</h3>
 
 									<form action="mailer.php" class="form" method="post">
-										<input placeholder="Nome" name="name" class="name" type="text" required="">
-											
+										<input placeholder="Nome" ng-model="teste" name="name" class="name" type="text" required="">
+										<span>{{teste}}</span>
 										<input placeholder="Email" name="email" class="mail" type="text" required="">
 											
 										<input placeholder="Telefone" name="telefone" class="number" type="number" required="">
@@ -238,23 +256,6 @@
 					</div>
 				</div>
 			</section>	
-
-
-
-
-
-
-	
-
-	<!-- script tags
-	============================================================= -->
-	<script src="js/core/jquery-2.1.1.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src="js/core/gmaps.js"></script>
-	<script src="js/core/smoothscroll.js"></script>
-	<script src="js/core/bootstrap.min.js"></script>
-	<script src="js/core/custom.js"></script>
-	<script src="js/core/angular.min.js"></script>
 	
 </body>
 </html>
