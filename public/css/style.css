@@ -89,7 +89,12 @@ li a.active{
 /*slider area*/
 #box{
 	border-radius: 30px;
+
 	}
+h4{
+
+	font-size: 40px;
+}
 
 .slider-row{
 	margin: 0;
@@ -259,6 +264,14 @@ li a.active{
 
 
 /*service area*/
+.img-servico{
+
+height: 200px;
+width: 300px;
+margin-left: auto;
+margin-right: auto;
+background : #f2851a; 
+}
 .service{
 	background: #f2851a;
 	background-repeat: repeat-y;
